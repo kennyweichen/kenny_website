@@ -1,0 +1,7 @@
+---
+title: "Home"
+---
+
+# Welcome
+
+This is a minimal index for the Quarto site. Your posts live in the `posts/` folder.
