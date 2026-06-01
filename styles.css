@@ -1,0 +1,13 @@
+a:hover {
+  cursor: url('/assets/images/point.png'), auto;
+}
+
+a:active {
+  cursor: url('/assets/images/point_low.png'), auto;
+}
+
+/* Clicked state */
+html.clicking,
+body.clicking {
+  cursor: url('/assets/images/point_low.png'), auto;
+}
