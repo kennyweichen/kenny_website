@@ -9,3 +9,9 @@ website:
         href: index.qmd
       - text: "Posts"
         href: posts.qmd
+format:
+  html:
+    css: styles.css
+    include-in-header:
+      - text: |
+          <script src="/custom.js"></script>
