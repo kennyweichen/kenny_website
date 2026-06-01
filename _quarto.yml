@@ -1,7 +1,8 @@
 project:
   type: website
 website:
-  title: "Kenny Website"
+  title: "Kenny's Website"
+  site-url: https://kennyweichen.com
   navbar:
     right:
       - text: "Home"
