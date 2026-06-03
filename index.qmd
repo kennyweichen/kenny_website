@@ -1,5 +1,10 @@
 ---
 title: "Home"
+listing:
+  contents: posts
+  sort: "date asc"
+  type: default
+  categories: true
 ---
 
 # Welcome

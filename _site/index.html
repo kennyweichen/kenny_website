@@ -33,6 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,13 +72,72 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script src="./custom.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -112,7 +173,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(28)</span></div><div class="category" data-category="TXVzaW5ncw==">Musings <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -137,12 +200,575 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="welcome" class="level1">
 <h1>Welcome</h1>
-<p>This is a minimal index for the Quarto site. Your posts live in the <code>posts/</code> folder.</p>
+<p>Site WIP, transferring everything from kennyweichen.github.io</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="TXVzaW5ncw==" data-listing-date-sort="1780462800000" data-listing-file-modified-sort="1780495036504" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="304">
+<div class="thumbnail"><a href="./posts/2026-06-03-social-media-stories.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2026-06-03-social-media-stories.html" class="no-external">Stories on Social Media</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('TXVzaW5ncw=='); return false;">Musings</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/2026-06-03-social-media-stories.html" class="no-external">
+Today I received a Partiful invite to a party this weekend and I was looking through the RSVP list and clicking on people I knew. One person I clicked on shared their…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2026-06-03-social-media-stories.html" class="no-external">
+<div class="listing-date">
+Jun 3, 2026
+</div>
+<div class="listing-author">
+Kenny Chen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1780345156749" data-listing-reading-time-sort="1" data-listing-word-count-sort="10">
+<div class="thumbnail"><a href="./posts/2019-12-07-Las-Vegas-Health-Yelp-STAT231-Project.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2019-12-07-Las-Vegas-Health-Yelp-STAT231-Project.html" class="no-external">Las Vegas Health Inspections and Yelp Reviews Dashboard</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2019-12-07-Las-Vegas-Health-Yelp-STAT231-Project.html" class="no-external">
+View the dashboard in a new tab
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2019-12-07-Las-Vegas-Health-Yelp-STAT231-Project.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1780345156753" data-listing-reading-time-sort="2" data-listing-word-count-sort="237">
+<div class="thumbnail"><a href="./posts/2025-10-21-Sweaty Hands.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-10-21-Sweaty Hands.html" class="no-external">Sweaty Hands</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2025-10-21-Sweaty Hands.html" class="no-external">
+I can’t pinpoint the start of my hyperhidrosis but I do distinctly remember this one memory that lingers in the back of my brain. I was 6 or 7 years old and I had just…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-10-21-Sweaty Hands.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1780345156751" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
+<div class="thumbnail"><a href="./posts/2023-12-12-bst245-project.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-12-12-bst245-project.html" class="no-external">Joint Modeling of Longitudinal and Survival Data</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2023-12-12-bst245-project.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-12-12-bst245-project.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1780345156752" data-listing-reading-time-sort="1" data-listing-word-count-sort="102">
+<div class="thumbnail"><a href="./posts/2024-07-23-learning-cpp.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-07-23-learning-cpp.html" class="no-external">Learning C++</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2024-07-23-learning-cpp.html" class="no-external">
+Back in undergrad, I dabbled in Java and Python for my intro CS and data structures classes. Then, I switched to statistics where I mostly programmed in R and SQL. A lot of…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-07-23-learning-cpp.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1780345156749" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
+<div class="thumbnail"><a href="./posts/2019-12-06-Fertility-Rates-STAT230-Project.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2019-12-06-Fertility-Rates-STAT230-Project.html" class="no-external">What Determines the Number of Children?</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2019-12-06-Fertility-Rates-STAT230-Project.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2019-12-06-Fertility-Rates-STAT230-Project.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-listing-file-modified-sort="1780345156750" data-listing-reading-time-sort="1" data-listing-word-count-sort="16">
+<div class="thumbnail"><a href="./posts/2020-05-08-Epidemiology-Project.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-05-08-Epidemiology-Project.html" class="no-external">Family Conflict and Suicidal Ideation Amongst Asian Americans</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2020-05-08-Epidemiology-Project.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-05-08-Epidemiology-Project.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-listing-file-modified-sort="1780345156749" data-listing-reading-time-sort="24" data-listing-word-count-sort="4604">
+<div class="thumbnail"><a href="./posts/2020-03-28-flash-politics.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-03-28-flash-politics.html" class="no-external">Writings from Fast Fiction, Flare Politics, Flash Philosophy</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2020-03-28-flash-politics.html" class="no-external">
+COVID-19, an infectious disease that has infected over half a million people worldwide and have killed more than 30,000 as of March 28, 2020, has stopped the world in its…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-03-28-flash-politics.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-listing-file-modified-sort="1780345156752" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
+<div class="thumbnail"><a href="./posts/2023-12-31-Masters-Thesis.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-12-31-Masters-Thesis.html" class="no-external">Masters Thesis: Separation of Data</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2023-12-31-Masters-Thesis.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-12-31-Masters-Thesis.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-listing-file-modified-sort="1780345156751" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
+<div class="thumbnail"><a href="./posts/2021-10-22-Gaussian-Copula-Review.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2021-10-22-Gaussian-Copula-Review.html" class="no-external">Review of Gaussian Copula Paper</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2021-10-22-Gaussian-Copula-Review.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2021-10-22-Gaussian-Copula-Review.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-listing-file-modified-sort="1780345156751" data-listing-reading-time-sort="17" data-listing-word-count-sort="3367">
+<div class="thumbnail"><a href="./posts/2021-10-13-Asian-American-Woman.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2021-10-13-Asian-American-Woman.html" class="no-external">Writings from HIST348: History of Asian American Women: Migration and Labor</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2021-10-13-Asian-American-Woman.html" class="no-external">
+My closest friends’ parents are Vietnamese refugees. Sometimes when I went to their house, I would hear about their lived experiences and what it was like to migrate to a…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2021-10-13-Asian-American-Woman.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-listing-file-modified-sort="1780345156753" data-listing-reading-time-sort="4" data-listing-word-count-sort="607">
+<div class="thumbnail"><a href="./posts/2026-05-27-ai-writing.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2026-05-27-ai-writing.html" class="no-external">25 year old man yells about X, Writing, AI</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2026-05-27-ai-writing.html" class="no-external">
+When these LLMs started popping out around 2021-2022, just right when I was a senior at Amherst, I was not a fan of them. I wanted to learn and struggle on my own and not…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2026-05-27-ai-writing.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-listing-file-modified-sort="1780345156752" data-listing-reading-time-sort="1" data-listing-word-count-sort="24">
+<div class="thumbnail"><a href="./posts/2024-10-24-ASN-Kidney-Week.html" class="no-external">
+
+<p class="card-img-top"><img loading='lazy' src="assets/images/asn-kidney_2024_poster.jpeg" alt="My Logo"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-10-24-ASN-Kidney-Week.html" class="no-external">ASN Kidney Week</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2024-10-24-ASN-Kidney-Week.html" class="no-external">
+Presented at my first conference! Had a poster presentation and two talks.
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-10-24-ASN-Kidney-Week.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-listing-file-modified-sort="1780345156750" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
+<div class="thumbnail"><a href="./posts/2020-11-20-MDA-Project.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-11-20-MDA-Project.html" class="no-external">League of Legends: Multivariate Data Analysis of Professional Games</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2020-11-20-MDA-Project.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-11-20-MDA-Project.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-listing-file-modified-sort="1780345156751" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
+<div class="thumbnail"><a href="./posts/2022-11-29-BST222-project.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-11-29-BST222-project.html" class="no-external">Simulation of emergency room wait times: a comparison of Weibull shape and scale estimators</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2022-11-29-BST222-project.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-11-29-BST222-project.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-listing-file-modified-sort="1780345156748" data-listing-reading-time-sort="8" data-listing-word-count-sort="1488">
+<div class="thumbnail"><a href="./posts/2019-11-24-Unitarianism.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2019-11-24-Unitarianism.html" class="no-external">My Experience with Unitarianism</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2019-11-24-Unitarianism.html" class="no-external">
+I had never heard of a “Unitarian Universalist” until my friend told me all about it on the first day of this class as we were sharing our religious backgrounds. And through…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2019-11-24-Unitarianism.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-listing-file-modified-sort="1780345156753" data-listing-reading-time-sort="1" data-listing-word-count-sort="83">
+<div class="thumbnail"><a href="./posts/2025-08-10-Dot-Placement.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-08-10-Dot-Placement.html" class="no-external">Dot Placement</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2025-08-10-Dot-Placement.html" class="no-external">
+You place three dots along the edges of an octagon at random. What is the probability that all three dots lie on distinct edges of the octagon?
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-08-10-Dot-Placement.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-listing-file-modified-sort="1780345156753" data-listing-reading-time-sort="5" data-listing-word-count-sort="880">
+<div class="thumbnail"><a href="./posts/2025-08-10-Cards-Reordering.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-08-10-Cards-Reordering.html" class="no-external">Cards Reordering</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2025-08-10-Cards-Reordering.html" class="no-external">
+The standard procedure for shuffling a deck of cards is to take the pack face downwards in the left hand and then transfer each card one by one to the right hand, putting…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-08-10-Cards-Reordering.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="18" data-listing-file-modified-sort="1780345156752" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
+<div class="thumbnail"><a href="./posts/2023-12-15-BST235-Project.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-12-15-BST235-Project.html" class="no-external">Noise in SGD</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2023-12-15-BST235-Project.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-12-15-BST235-Project.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="19" data-listing-file-modified-sort="1780345156751" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
+<div class="thumbnail"><a href="./posts/2022-12-11-BST210-Project.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-12-11-BST210-Project.html" class="no-external">Severity of COVID-19 Symptoms and Anxiety and Depression</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2022-12-11-BST210-Project.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-12-11-BST210-Project.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-listing-file-modified-sort="1780345156752" data-listing-reading-time-sort="3" data-listing-word-count-sort="428">
+<div class="thumbnail"><a href="./posts/2025-08-09-Even-Before-Odd.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-08-09-Even-Before-Odd.html" class="no-external">Problem: Even Before Odd</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2025-08-09-Even-Before-Odd.html" class="no-external">
+Suppose you roll a fair 6-sided die until you’ve seen all 6 faces. What is the probability you won’t see an odd numbered face until you have seen all even numbered faces?
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-08-09-Even-Before-Odd.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="21" data-listing-file-modified-sort="1780345156751" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
+<div class="thumbnail"><a href="./posts/2022-04-22-Undergraduate-Thesis.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2022-04-22-Undergraduate-Thesis.html" class="no-external">Undergraduate Thesis: Nonparametric high-dimensional measure of dependence using checkerboard copulas</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2022-04-22-Undergraduate-Thesis.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2022-04-22-Undergraduate-Thesis.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="22" data-listing-file-modified-sort="1780345156751" data-listing-reading-time-sort="1" data-listing-word-count-sort="19">
+<div class="thumbnail"><a href="./posts/2021-05-27-SIR-Models.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2021-05-27-SIR-Models.html" class="no-external">Implementing an SIR Model on Various Network Topologies</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2021-05-27-SIR-Models.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2021-05-27-SIR-Models.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="23" data-listing-file-modified-sort="1780345156752" data-listing-reading-time-sort="4" data-listing-word-count-sort="624">
+<div class="thumbnail"><a href="./posts/2024-07-30-difference-in-differences.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-07-30-difference-in-differences.html" class="no-external">Introduction</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2024-07-30-difference-in-differences.html" class="no-external">
+The first time I heard about Difference in Differences was in the PhD level longitudinal analysis class at Harvard with Dr.&nbsp;Tom Chen.
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-07-30-difference-in-differences.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="24" data-listing-file-modified-sort="1780345156751" data-listing-reading-time-sort="1" data-listing-word-count-sort="20">
+<div class="thumbnail"><a href="./posts/2021-12-13-Regularization-Methods.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2021-12-13-Regularization-Methods.html" class="no-external">Regularization Methods</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2021-12-13-Regularization-Methods.html" class="no-external">
+This one got an honorable mention!
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2021-12-13-Regularization-Methods.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="25" data-listing-file-modified-sort="1780345156752" data-listing-reading-time-sort="3" data-listing-word-count-sort="590">
+<div class="thumbnail"><a href="./posts/2024-07-22-no-enemies.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-07-22-no-enemies.html" class="no-external">I have no enemies</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2024-07-22-no-enemies.html" class="no-external">
+Today, I woke up at 6:09 am. I had ambitiously set my alarm for 6:00 am but snoozed it because I had an amazing dream. But I was not able to continue the dream after trying…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-07-22-no-enemies.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="26" data-listing-file-modified-sort="1780345156752" data-listing-reading-time-sort="2" data-listing-word-count-sort="316">
+<div class="thumbnail"><a href="./posts/2025-08-09-King-Cake.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-08-09-King-Cake.html" class="no-external">King Cake</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2025-08-09-King-Cake.html" class="no-external">
+A king wants to hold a festival, for which he is inviting 1000 guests. As a tradition, each guest will bring the king one mini cake. However, news reaches the king that one…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-08-09-King-Cake.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="27" data-listing-file-modified-sort="1780345156750" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
+<div class="thumbnail"><a href="./posts/2020-11-02-Asian-American-Voting-Project.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-11-02-Asian-American-Voting-Project.html" class="no-external">Asian American Voting Project</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/2020-11-02-Asian-American-Voting-Project.html" class="no-external">
+
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-11-02-Asian-American-Voting-Project.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
